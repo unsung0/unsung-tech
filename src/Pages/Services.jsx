@@ -1,82 +1,91 @@
 function Services() {
-  const services = [
-    {
-      number: "01",
-      title: "Web Development",
-      text: "Modern, responsive websites and web applications built around your business needs."
-    },
-    {
-      number: "02",
-      title: "AI Solutions",
-      text: "Intelligent systems that automate tasks, analyze information and improve decision making."
-    },
-    {
-      number: "03",
-      title: "Cloud Solutions",
-      text: "Reliable cloud infrastructure that allows your applications to grow with your business."
-    },
-    {
-      number: "04",
-      title: "Digital Transformation",
-      text: "We help traditional businesses adopt technology and build better digital experiences."
-    }
-  ];
-
   return (
     <main className="page">
-      <section className="page-header">
-        <p className="eyebrow">WHAT WE DO</p>
-
+      <div className="page-header">
         <h1>
-          Technology built
-          <span> for your next move.</span>
+          What we <span>build.</span>
         </h1>
-
         <p>
-          We create practical digital solutions that help organizations
-          work smarter, move faster and grow.
+          Four areas, one team. Whatever the project, we start from the
+          same question: what does this actually need to work well?
         </p>
-      </section>
+      </div>
 
-      <section className="services-grid">
-        {services.map((service) => (
-          <div className="service-card" key={service.number}>
-            <span>{service.number}</span>
+      <div className="services-grid">
+        <div className="service-card">
+          <span>01</span>
+          <div className="arrow">↗</div>
+          <h2>Web &amp; software</h2>
+          <p>
+            Full-stack applications, SaaS platforms, business systems and
+            APIs, built to handle real users and real data from day one.
+          </p>
+        </div>
 
-            <h2>{service.title}</h2>
+        <div className="service-card">
+          <span>02</span>
+          <div className="arrow">↗</div>
+          <h2>Artificial intelligence</h2>
+          <p>
+            AI integrations and automation that take on repetitive work,
+            so your team can spend time on what actually needs a person.
+          </p>
+        </div>
 
-            <p>{service.text}</p>
+        <div className="service-card">
+          <span>03</span>
+          <div className="arrow">↗</div>
+          <h2>Cloud infrastructure</h2>
+          <p>
+            Hosting and deployment set up to stay reliable as traffic
+            grows, without you having to think about servers.
+          </p>
+        </div>
 
-            <div className="arrow">↗</div>
-          </div>
-        ))}
-      </section>
+        <div className="service-card">
+          <span>04</span>
+          <div className="arrow">↗</div>
+          <h2>Digital transformation</h2>
+          <p>
+            Turning paper processes and spreadsheets into systems your
+            whole team can actually use.
+          </p>
+        </div>
+      </div>
 
-      <section className="process">
-        <p className="eyebrow">OUR PROCESS</p>
-
-        <h2>Simple. Focused. Effective.</h2>
+      <div className="process">
+        <p className="eyebrow">HOW WE WORK</p>
+        <h2>From idea to launch.</h2>
 
         <div className="process-grid">
           <div>
             <strong>01</strong>
-            <h3>Discover</h3>
-            <p>We understand the problem and define the opportunity.</p>
+            <h3>Understand</h3>
+            <p>
+              A short discovery call to map out what the system actually
+              needs to do, before any code gets written.
+            </p>
           </div>
 
           <div>
             <strong>02</strong>
             <h3>Build</h3>
-            <p>We design and develop a solution around your goals.</p>
+            <p>
+              We build in stages you can see and react to, instead of
+              disappearing for months and returning with a surprise.
+            </p>
           </div>
 
           <div>
             <strong>03</strong>
-            <h3>Launch</h3>
-            <p>We deploy, improve and help your product grow.</p>
+            <h3>Launch &amp; support</h3>
+            <p>
+              We deploy, hand over documentation, and stay reachable for
+              fixes and small changes after launch.
+            </p>
           </div>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

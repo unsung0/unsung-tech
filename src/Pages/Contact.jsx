@@ -1,62 +1,79 @@
+import { useState } from "react";
+
 function Contact() {
+  const [submitted, setSubmitted] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setSubmitted(true);
+  }
+
   return (
     <main className="page">
-      <section className="contact-section">
+      <div className="contact-section">
         <div className="contact-info">
           <p className="eyebrow">GET IN TOUCH</p>
-
           <h1>
-            Let's build something
-            <span> meaningful.</span>
+            Let's start a <span>conversation.</span>
           </h1>
-
           <p>
-            Have an idea, business problem or project in mind?
-            Tell us about it and let's explore what technology can do.
+            Tell us what you're trying to build. We'll get back to you
+            within a couple of days with honest feedback on scope and
+            timeline.
           </p>
 
           <div className="contact-details">
             <div>
-              <strong>Email</strong>
-              <p>hello@unsung.tech</p>
+              <strong>EMAIL</strong>
+              <p>hello@unsungtech.co.tz</p>
             </div>
-
             <div>
-              <strong>Location</strong>
+              <strong>LOCATION</strong>
               <p>Zanzibar, Tanzania</p>
             </div>
-
             <div>
-              <strong>Working Hours</strong>
-              <p>Mon — Fri, 08:00 — 17:00</p>
+              <strong>RESPONSE TIME</strong>
+              <p>Usually within 48 hours</p>
             </div>
           </div>
         </div>
 
-        <form className="contact-form">
-          <label>Your Name</label>
-          <input type="text" placeholder="Enter your name" />
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <label htmlFor="name">Name</label>
+          <input id="name" type="text" placeholder="Your name" required />
 
-          <label>Email Address</label>
-          <input type="email" placeholder="you@example.com" />
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="you@email.com"
+            required
+          />
 
-          <label>Project Type</label>
-          <select>
-            <option>Web Development</option>
-            <option>AI Solution</option>
-            <option>Cloud Solution</option>
-            <option>Digital Transformation</option>
+          <label htmlFor="project">Project type</label>
+          <select id="project" defaultValue="">
+            <option value="" disabled>
+              Select an option
+            </option>
+            <option value="web">Web or software</option>
+            <option value="ai">AI / automation</option>
+            <option value="cloud">Cloud infrastructure</option>
+            <option value="other">Something else</option>
           </select>
 
-          <label>Tell us about your project</label>
+          <label htmlFor="message">Tell us about it</label>
           <textarea
+            id="message"
             rows="5"
-            placeholder="Describe your idea..."
+            placeholder="What are you trying to build?"
+            required
           ></textarea>
 
-          <button type="button">Send Message →</button>
+          <button type="submit">
+            {submitted ? "Message sent ✓" : "Send message"}
+          </button>
         </form>
-      </section>
+      </div>
     </main>
   );
 }
